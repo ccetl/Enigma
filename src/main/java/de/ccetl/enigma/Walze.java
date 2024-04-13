@@ -18,7 +18,7 @@ public final class Walze {
         this(num, WalzenRingstellung.EINS);
     }
 
-    public char scramble(char c) {
+    public char forwards(char c) {
         if (num == WalzenNummer.UKW_B) {
             char[] wiring = num.getChars();
             return wiring[getIndex(c, ALPHABET)];
@@ -29,7 +29,7 @@ public final class Walze {
         return num.getChars()[index];
     }
 
-    public char unScramble(char c) {
+    public char backwards(char c) {
         if (num == WalzenNummer.UKW_B) {
             return ALPHABET[getIndex(c, num.getChars())];
         }
@@ -97,7 +97,7 @@ public final class Walze {
         ZWEIUNDZWANZIG((byte) 22),
         DREIUNDZWANZIG((byte) 23),
         VIERUNDZWANZIG((byte) 24),
-        FIUENFUNDZWANZIG((byte) 25),
+        FUENFUNDZWANZIG((byte) 25),
         SECHSUNDZWANZIG((byte) 26);
 
         private final byte pos;

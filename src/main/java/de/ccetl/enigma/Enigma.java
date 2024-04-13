@@ -17,8 +17,8 @@ public final class Enigma {
     private final Walze cylinder3;
     private final Walze ukw;
 
-    public Enigma(Walze walze1, Walze walze2, Walze walze3, Steckerbrett plugboard) {
-        this.plugboard = plugboard;
+    public Enigma(Walze walze1, Walze walze2, Walze walze3, Steckerbrett steckerbrett) {
+        this.plugboard = steckerbrett;
         this.cylinder1 = walze1;
         this.cylinder2 = walze2;
         this.cylinder3 = walze3;
@@ -27,13 +27,13 @@ public final class Enigma {
 
     public char verschluesseln(char c) {
         c = plugboard.connect(c);
-        c = cylinder1.scramble(c);
-        c = cylinder2.scramble(c);
-        c = cylinder3.scramble(c);
-        c = ukw.scramble(c);
-        c = cylinder3.unScramble(c);
-        c = cylinder2.unScramble(c);
-        c = cylinder1.unScramble(c);
+        c = cylinder1.forwards(c);
+        c = cylinder2.forwards(c);
+        c = cylinder3.forwards(c);
+        c = ukw.forwards(c);
+        c = cylinder3.backwards(c);
+        c = cylinder2.backwards(c);
+        c = cylinder1.backwards(c);
         c = plugboard.connect(c);
         return c;
     }
