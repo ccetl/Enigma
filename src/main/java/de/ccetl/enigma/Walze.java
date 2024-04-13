@@ -18,7 +18,7 @@ public final class Walze {
         this(num, WalzenRingstellung.EINS);
     }
 
-    public char forwards(char c) {
+    public char forward(char c) {
         if (num == WalzenNummer.UKW_B) {
             char[] wiring = num.getChars();
             return wiring[getIndex(c, ALPHABET)];
@@ -29,7 +29,7 @@ public final class Walze {
         return num.getChars()[index];
     }
 
-    public char backwards(char c) {
+    public char backward(char c) {
         if (num == WalzenNummer.UKW_B) {
             return ALPHABET[getIndex(c, num.getChars())];
         }

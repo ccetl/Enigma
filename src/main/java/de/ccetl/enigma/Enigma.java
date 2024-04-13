@@ -27,13 +27,13 @@ public final class Enigma {
 
     public char verschluesseln(char c) {
         c = plugboard.connect(c);
-        c = cylinder1.forwards(c);
-        c = cylinder2.forwards(c);
-        c = cylinder3.forwards(c);
-        c = ukw.forwards(c);
-        c = cylinder3.backwards(c);
-        c = cylinder2.backwards(c);
-        c = cylinder1.backwards(c);
+        c = cylinder1.forward(c);
+        c = cylinder2.forward(c);
+        c = cylinder3.forward(c);
+        c = ukw.forward(c);
+        c = cylinder3.backward(c);
+        c = cylinder2.backward(c);
+        c = cylinder1.backward(c);
         c = plugboard.connect(c);
         return c;
     }
